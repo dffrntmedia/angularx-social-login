@@ -115,7 +115,6 @@ export class AuthService {
   }
 
   private initialize() {
-    console.log('initialize', this.initialized);
     this.initialized = true;
     this.providers.forEach((provider: LoginProvider, key: string) => {
       provider.initialize().then(() => {
@@ -136,7 +135,6 @@ export class AuthService {
   }
 
   signIn(providerId: string, opt?: LoginOpt): Promise<SocialUser> {
-    console.log('signIn', this.initialized);
     if (!this.initialized) {
       this.initialize();
     }
@@ -159,7 +157,6 @@ export class AuthService {
   }
 
   signOut(revoke: boolean = false): Promise<any> {
-    console.log('signOut', this.initialized);
     if (!this.initialized) {
       this.initialize();
     }

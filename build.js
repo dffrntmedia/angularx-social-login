@@ -48,7 +48,6 @@ return Promise.resolve()
   .then(() => {
     // Base configuration.
     const es5Entry = path.join(es5OutputFolder, `${libName}.js`);
-    console.warn(es5Entry);
     const es2015Entry = path.join(es2015OutputFolder, `${libName}.js`);
     const rollupBaseConfig = {
       input: {
