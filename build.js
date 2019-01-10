@@ -13,7 +13,7 @@ const commonjs = require('rollup-plugin-commonjs');
 
 const inlineResources = require('./inline-resources');
 
-const libName = require('./package.json').name;
+const libName = require('./package.json').name.split('/')[1];
 const rootFolder = path.join(__dirname);
 const compilationFolder = path.join(rootFolder, 'out-tsc');
 const srcFolder = path.join(rootFolder, 'src/lib');
@@ -48,6 +48,7 @@ return Promise.resolve()
   .then(() => {
     // Base configuration.
     const es5Entry = path.join(es5OutputFolder, `${libName}.js`);
+    console.warn(es5Entry);
     const es2015Entry = path.join(es2015OutputFolder, `${libName}.js`);
     const rollupBaseConfig = {
       input: {
