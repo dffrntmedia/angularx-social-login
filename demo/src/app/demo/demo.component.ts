@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '@dffrntlab/angularx-social-login';
-import { SocialUser } from '@dffrntlab/angularx-social-login';
-import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from '@dffrntlab/angularx-social-login';
+import { AuthService } from 'dffrntlab-angularx-social-login';
+import { SocialUser } from 'dffrntlab-angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from 'dffrntlab-angularx-social-login';
 
 
 @Component({

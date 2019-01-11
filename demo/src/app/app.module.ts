@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DemoComponent } from './demo/demo.component';
 
-import { SocialLoginModule } from '@dffrntlab/angularx-social-login';
-import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from '@dffrntlab/angularx-social-login';
+import { SocialLoginModule } from 'dffrntlab-angularx-social-login';
+import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from 'dffrntlab-angularx-social-login';
 
 
 const config = new AuthServiceConfig([
