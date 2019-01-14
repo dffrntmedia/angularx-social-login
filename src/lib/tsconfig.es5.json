@@ -14,8 +14,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "angularx-social-login.js",
-    "flatModuleId": "angularx-social-login",
+    "flatModuleOutFile": "dffrntlab-angularx-social-login.js",
+    "flatModuleId": "dffrntlab-angularx-social-login",
     "genDir": "../../out-tsc/lib-gen-dir/"
   }
 }

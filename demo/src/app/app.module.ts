@@ -7,22 +7,25 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DemoComponent } from './demo/demo.component';
 
-import { SocialLoginModule } from 'angularx-social-login';
-import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from 'angularx-social-login';
+import { SocialLoginModule } from 'dffrntlab-angularx-social-login';
+import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from 'dffrntlab-angularx-social-login';
 
 
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com')
+    provider: new GoogleLoginProvider('624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com'),
+    lazyLoad: true
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider('561602290896109')
+    provider: new FacebookLoginProvider('561602290896109'),
+    lazyLoad: true
   },
   {
     id: LinkedInLoginProvider.PROVIDER_ID,
-    provider: new LinkedInLoginProvider('78iqy5cu2e1fgr')
+    provider: new LinkedInLoginProvider('78iqy5cu2e1fgr'),
+    lazyLoad: true
   }
 ]);
 
