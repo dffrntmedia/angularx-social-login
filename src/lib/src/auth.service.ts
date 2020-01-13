@@ -115,24 +115,30 @@ export class AuthService {
   }
 
   initialize() {
+    if (this.initialized) {
+      return;
+    }
+
     this.initialized = true;
     const providersPromises: Promise<any>[] = [];
 
     this.providers.forEach((provider: LoginProvider, key: string) => {
-      providersPromises.push(provider.initialize().then(() => {
+      providersPromises.push(provider.initialize()
+      .then(() => {
         let readyProviders = this._readyState.getValue();
         readyProviders.push(key);
         this._readyState.next(readyProviders);
 
-        provider.getLoginStatus().then((user) => {
+        provider.getLoginStatus()
+        .then((user) => {
           user.provider = key;
 
           this._user = user;
           this._authState.next(user);
-        });
-      }).catch((err) => {
-        // this._authState.next(null);
-      }));
+        })
+        .catch((err) => {});
+      })
+      .catch((err) => { /* this._authState.next(null); */ }));
     });
 
     return Promise.all(providersPromises);
