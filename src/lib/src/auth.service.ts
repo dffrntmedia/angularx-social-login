@@ -114,10 +114,12 @@ export class AuthService {
     }
   }
 
-  private initialize() {
+  initialize() {
     this.initialized = true;
+    const providersPromises: Promise<any>[] = [];
+
     this.providers.forEach((provider: LoginProvider, key: string) => {
-      provider.initialize().then(() => {
+      providersPromises.push(provider.initialize().then(() => {
         let readyProviders = this._readyState.getValue();
         readyProviders.push(key);
         this._readyState.next(readyProviders);
@@ -130,8 +132,10 @@ export class AuthService {
         });
       }).catch((err) => {
         // this._authState.next(null);
-      });
+      }));
     });
+
+    return Promise.all(providersPromises);
   }
 
   signIn(providerId: string, opt?: LoginOpt): Promise<SocialUser> {
