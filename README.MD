@@ -175,7 +175,7 @@ ng serve
 ## Publishing to NPM
 
 ```
-# set new version of pcakge in package.json
+# set new version of package in package.json
 npm run prebuild
 npm build
 cd dist
