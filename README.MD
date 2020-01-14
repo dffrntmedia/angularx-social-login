@@ -171,3 +171,13 @@ cd demo
 npm install
 ng serve
 ```
+
+## Publishing to NPM
+
+```
+# set new version of package in package.json
+npm run prebuild
+npm build
+cd dist
+npm publish
+```
